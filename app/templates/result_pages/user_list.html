@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <ul>
+        {% for user in users %}
+        <li>{{ user.user_id }} - {{ user.nombre }} {{ user.apellido }}</li>
+        {% endfor %}
+    </ul>
+    {% if users %}
+    <p>Total de usuarios registrados: {{ users|length }}</p>
+    {% else %}
+    <p>Ningún usuario registrado.</p>
+    {% endif %}
+</body>
+</html>

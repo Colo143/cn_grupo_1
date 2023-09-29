@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Canales</title>
+</head>
+<body>
+    <h1>Lista de Canales</h1>
+    <ul>
+        {% for channel in channels %}
+        <li>{{ channel.channel_id }} - {{ channel.nombre }} {{ channel.user_id }}</li>
+        {% endfor %}
+    </ul>
+    {% if channels %}
+    <p>Total de canales registrados: {{ channels|length }}</p>
+    {% else %}
+    <p>Ningún canal registrado.</p>
+    {% endif %}
+</body>
+</html>

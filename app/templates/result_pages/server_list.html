@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Servidores</title>
+</head>
+<body>
+    <h1>Lista de Servidores</h1>
+    <ul>
+        {% for server in servers %}
+        <li>{{ server.server_id }} - {{ server.nombre }} {{ server.user_id }}</li>
+        {% endfor %}
+    </ul>
+    {% if servers %}
+    <p>Total de usuarios registrados: {{ servers|length }}</p>
+    {% else %}
+    <p>Ningún usuario registrado.</p>
+    {% endif %}
+</body>
+</html>
